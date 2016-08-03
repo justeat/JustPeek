@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'JustPeek_Example' do
+  pod 'JustPeek', :path => '../'
+
+  target 'JustPeek_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
