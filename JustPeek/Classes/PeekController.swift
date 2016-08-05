@@ -7,10 +7,16 @@
 
 import UIKit
 
-private extension UIDevice {
+private extension UIView {
     
-    var isSimulator: Bool {
-        return TARGET_OS_SIMULATOR != 0
+    var canUseForceTouch: Bool {
+        get {
+            if #available(iOS 9.0, *) {
+                return traitCollection.forceTouchCapability == .Available
+            } else {
+                return false
+            }
+        }
     }
     
 }
@@ -36,7 +42,7 @@ internal protocol PeekHandler {
     
     public func register(viewController v: UIViewController, forPeekingWithDelegate d: PeekingDelegate, sourceView: UIView) {
         if #available(iOS 9.0, *) {
-            peekHandler = UIDevice.currentDevice().isSimulator ? PeekReplacementHandler() : PeekNativeHandler()
+            peekHandler = sourceView.canUseForceTouch ? PeekNativeHandler() : PeekReplacementHandler()
         } else {
             peekHandler = PeekReplacementHandler()
         }
