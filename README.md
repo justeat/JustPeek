@@ -9,8 +9,6 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
-
 ## Installation
 
 JustPeek is available through [CocoaPods](http://cocoapods.org). To install
@@ -22,7 +20,7 @@ pod "JustPeek"
 
 ## Author
 
-Gianluca Tranchedone, gianluca.tranchedone@just-eat.com
+Gianluca Tranchedone, gtranchedone on most of the Internet.
 
 ## License
 
