@@ -10,7 +10,7 @@ import UIKit
 
 class PeekReplacementHandler: PeekHandler {
     
-    weak var peekController: PeekController?
+    var peekController: PeekController?
     private weak var delegate: PeekingDelegate?
     
     private var peekViewController: PeekViewController?

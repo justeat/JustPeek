@@ -35,6 +35,15 @@ import UIKit
     
 }
 
+public extension PeekContext {
+    
+    // for ObjC supoprt
+    @objc public convenience init(destinationViewController: UIViewController, rect: CGRect) {
+        self.init(destinationViewController: destinationViewController, sourceRect: rect)
+    }
+    
+}
+
 private extension CGRect {
     
     // percentage needs to be between 0.0 and 1.0
