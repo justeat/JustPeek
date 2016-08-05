@@ -76,7 +76,7 @@ private extension UIView {
         get {
             let view = UIImageView(frame: bounds)
             if let image = snapshot {
-                let radious = CGFloat(4.0) // just because with this value the result looks good
+                let radious = CGFloat(20.0) // just because with this value the result looks good
                 view.image = image.applyBlurWithRadius(radious, tintColor: nil, saturationDeltaFactor: 1.0, maskImage: nil)
             }
             return view

@@ -12,7 +12,7 @@ import UIKit
     let destinationViewController: UIViewController
     let sourceRect: CGRect?
     
-    private let peekAnimationInsetMultiplier = CGFloat(0.08)
+    private let peekAnimationInsetMultiplier = CGFloat(0.1) // 10%
     internal let animationDuration: NSTimeInterval = 0.2
     
     public init(destinationViewController: UIViewController, sourceRect: CGRect? = nil) {
@@ -22,9 +22,9 @@ import UIKit
     }
     
     internal func initalPreviewFrame() -> CGRect {
-        var initialFrame = finalPreviewFrame().insetBy(percentage: peekAnimationInsetMultiplier * 2)
+        var initialFrame = finalPreviewFrame().insetBy(percentage: peekAnimationInsetMultiplier)
         if let sourceRect = sourceRect {
-            initialFrame = sourceRect.insetBy(percentage: -peekAnimationInsetMultiplier)
+            initialFrame = sourceRect
         }
         return initialFrame
     }

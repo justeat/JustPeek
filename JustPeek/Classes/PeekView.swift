@@ -24,7 +24,7 @@ internal class PeekView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = min(frame.height, frame.width) * 0.08 // 8% of the smallest side
+        layer.cornerRadius = min(frame.height, frame.width) * 0.05 // 5% of the smallest side
     }
     
 }
