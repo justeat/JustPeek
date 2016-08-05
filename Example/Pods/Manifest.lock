@@ -1,0 +1,16 @@
+PODS:
+  - JustPeek (0.1.0)
+
+DEPENDENCIES:
+  - JustPeek (from `../`)
+
+EXTERNAL SOURCES:
+  JustPeek:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JustPeek: 022456a0a74304dd64e2f061c5e3152dce9cb95e
+
+PODFILE CHECKSUM: 6759c67ac4079f3be556c73a1564f8542c733dce
+
+COCOAPODS: 1.0.1

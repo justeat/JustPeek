@@ -1,0 +1,6 @@
+framework module JustPeek {
+  umbrella header "JustPeek-umbrella.h"
+
+  export *
+  module * { export * }
+}
