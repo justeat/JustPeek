@@ -16,6 +16,8 @@
 		1EFED19DD2F31C8F106FD5EE9E070E72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		2560B41684A3475DBF911EA2DAB9D13A /* PeekController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A7225C8CBD1A0DCE26E82C3C632F4D /* PeekController.swift */; };
 		3C9BB004AD83DE3CE0366D95BBB58169 /* PeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1E948178CDC6B33750AB260D2EFCAB /* PeekView.swift */; };
+		6133199D1D54CD1800051F47 /* PeekNativeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6133199C1D54CD1800051F47 /* PeekNativeHandler.swift */; };
+		6133199F1D54CE4E00051F47 /* PeekReplacementHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6133199E1D54CE4E00051F47 /* PeekReplacementHandler.swift */; };
 		8068009847D7828D84DA58CEE70B4082 /* PeekContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87878CE5CC1E4FEC917E338C9778F36A /* PeekContext.swift */; };
 		86B383EADA52952700EFFDDF94518F46 /* PeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A76AD990D6C055FD6AA5A21AC00573 /* PeekViewController.swift */; };
 		99E28A743004EB7FCA49E0ADDEBA9AEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
@@ -47,6 +49,8 @@
 		3CC9F82B359E20814CBC80B4E7245B00 /* Pods-JustPeek_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JustPeek_Tests-dummy.m"; sourceTree = "<group>"; };
 		55489D366F4C5606F66F4606233DE5B2 /* JustPeek.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JustPeek.modulemap; sourceTree = "<group>"; };
 		56CA8EB7BADBED1137CE33DDC337CC09 /* Pods-JustPeek_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustPeek_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		6133199C1D54CD1800051F47 /* PeekNativeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeekNativeHandler.swift; sourceTree = "<group>"; };
+		6133199E1D54CE4E00051F47 /* PeekReplacementHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeekReplacementHandler.swift; sourceTree = "<group>"; };
 		691FB80B39FCD5AC2AF0F90544C4A267 /* Pods-JustPeek_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JustPeek_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		76EEF2496065BAE63A8B48AEC6460AC0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7881F8B0479ACA92C8A58FEA921EB184 /* JustPeek.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JustPeek.xcconfig; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 			children = (
 				87878CE5CC1E4FEC917E338C9778F36A /* PeekContext.swift */,
 				08A7225C8CBD1A0DCE26E82C3C632F4D /* PeekController.swift */,
+				6133199C1D54CD1800051F47 /* PeekNativeHandler.swift */,
+				6133199E1D54CE4E00051F47 /* PeekReplacementHandler.swift */,
 				BD1E948178CDC6B33750AB260D2EFCAB /* PeekView.swift */,
 				35A76AD990D6C055FD6AA5A21AC00573 /* PeekViewController.swift */,
 				7A953AAE826ACD2796DC16C881D1E581 /* UIImage+ImageEffects.h */,
@@ -363,8 +369,10 @@
 			files = (
 				06A30140E2A2ED26CBC3C7C436BC871D /* JustPeek-dummy.m in Sources */,
 				8068009847D7828D84DA58CEE70B4082 /* PeekContext.swift in Sources */,
+				6133199F1D54CE4E00051F47 /* PeekReplacementHandler.swift in Sources */,
 				2560B41684A3475DBF911EA2DAB9D13A /* PeekController.swift in Sources */,
 				3C9BB004AD83DE3CE0366D95BBB58169 /* PeekView.swift in Sources */,
+				6133199D1D54CD1800051F47 /* PeekNativeHandler.swift in Sources */,
 				86B383EADA52952700EFFDDF94518F46 /* PeekViewController.swift in Sources */,
 				0099BD64BFB67DDBE68B8FD4604C19BE /* UIImage+ImageEffects.m in Sources */,
 			);

@@ -9,7 +9,7 @@
 import UIKit
 import JustPeek
 
-class TableViewController: UITableViewController, PeekControllerDelegate {
+class TableViewController: UITableViewController, PeekingDelegate {
     
     enum SegueIdentifiers: String {
         case ShowDetails = "ShowDetailsSegueIdentifier"
@@ -21,7 +21,8 @@ class TableViewController: UITableViewController, PeekControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        peekController = PeekController(view: tableView, delegate: self)
+        peekController = PeekController()
+        peekController?.register(viewController: self, forPeekingWithDelegate: self, sourceView: tableView)
     }
     
     // MARK: Segues
@@ -39,14 +40,14 @@ class TableViewController: UITableViewController, PeekControllerDelegate {
         performSegueWithIdentifier(SegueIdentifiers.ShowDetails.rawValue, sender: indexPath)
     }
     
-    // MARK: PeekControllerDelegate
+    // MARK: PeekingDelegate
     
     func peekController(controller: PeekController, peekContextForLocation location: CGPoint) -> PeekContext? {
         let viewController = storyboard?.instantiateViewControllerWithIdentifier("ViewController")
         if let viewController = viewController, indexPath = tableView.indexPathForRowAtPoint(location) {
             configureViewController(viewController, withItemAtIndexPath: indexPath)
             let cell = tableView.cellForRowAtIndexPath(indexPath)
-            return PeekContext(destinationViewController: viewController, sourceViewController: self, sourceRect: cell?.frame)
+            return PeekContext(destinationViewController: viewController, sourceRect: cell?.frame)
         }
         return nil
     }

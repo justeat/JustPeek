@@ -10,15 +10,13 @@ import UIKit
 @objc(JEPeekContext) public class PeekContext: NSObject {
     
     let destinationViewController: UIViewController
-    let sourceViewController: UIViewController
     let sourceRect: CGRect?
     
     private let peekAnimationInsetMultiplier = CGFloat(0.08)
     internal let animationDuration: NSTimeInterval = 0.2
     
-    public init(destinationViewController: UIViewController, sourceViewController: UIViewController, sourceRect: CGRect? = nil) {
+    public init(destinationViewController: UIViewController, sourceRect: CGRect? = nil) {
         self.destinationViewController = destinationViewController
-        self.sourceViewController = sourceViewController
         self.sourceRect = sourceRect
         super.init()
     }

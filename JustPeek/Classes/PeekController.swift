@@ -7,7 +7,23 @@
 
 import UIKit
 
-@objc(JEPeekControllerDelegate) public protocol PeekControllerDelegate {
+private extension UIDevice {
+    
+    var isSimulator: Bool {
+        return TARGET_OS_SIMULATOR != 0
+    }
+    
+}
+
+internal protocol PeekHandler {
+    
+    weak var peekController: PeekController? { get set }
+    
+    func register(viewController vc: UIViewController, forPeekingWithDelegate delegate: PeekingDelegate, sourceView: UIView)
+    
+}
+
+@objc(JEPeekingDelegate) public protocol PeekingDelegate {
     
     func peekController(controller: PeekController, peekContextForLocation location: CGPoint) -> PeekContext?
     func peekController(controller: PeekController, commit viewController: UIViewController)
@@ -16,58 +32,16 @@ import UIKit
 
 @objc(JEPeekController) public class PeekController: NSObject {
     
-    private(set) public weak var delegate: PeekControllerDelegate!
-    private(set) public weak var view: UIView!
+    private var peekHandler: PeekHandler?
     
-    private var peekViewController: PeekViewController?
-    private lazy var presentationWindow: UIWindow? = {
-        let window = UIWindow()
-        window.backgroundColor = .clearColor()
-        window.windowLevel = UIWindowLevelAlert
-        return window
-    }()
-    
-    public override init() {
-        let format = "\(NSStringFromSelector(#selector(PeekController.init(view:delegate:)))) should be used instead"
-        let exception = NSException(name: NSInternalInconsistencyException, reason: format, userInfo: nil)
-        exception.raise()
-    }
-    
-    public init(view: UIView, delegate: PeekControllerDelegate) {
-        self.view = view
-        self.delegate = delegate
-        super.init()
-        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self,
-                                                                      action: #selector(handleLongPress(fromRecognizer:)))
-        view.addGestureRecognizer(longPressGestureRecognizer)
-    }
-    
-    internal func handleLongPress(fromRecognizer gestureRecognizer: UILongPressGestureRecognizer) {
-        switch gestureRecognizer.state {
-        case .Began:
-            peek(at: gestureRecognizer.locationInView(view))
-            
-        case .Ended, .Cancelled:
-            pop()
-            
-        default:
-            break
+    public func register(viewController v: UIViewController, forPeekingWithDelegate d: PeekingDelegate, sourceView: UIView) {
+        if #available(iOS 9.0, *) {
+            peekHandler = UIDevice.currentDevice().isSimulator ? PeekReplacementHandler() : PeekNativeHandler()
+        } else {
+            peekHandler = PeekReplacementHandler()
         }
-    }
-    
-    private func peek(at location: CGPoint) {
-        if let window = presentationWindow, context = delegate.peekController(self, peekContextForLocation: location) {
-            peekViewController = PeekViewController(peekContext: context)
-            window.rootViewController = peekViewController
-            window.hidden = false
-            peekViewController!.peek()
-        }
-    }
-    
-    private func pop() {
-        peekViewController?.pop({ [weak self] _ in
-            self?.presentationWindow?.hidden = true
-        })
+        peekHandler?.peekController = self
+        peekHandler?.register(viewController: v, forPeekingWithDelegate: d, sourceView: sourceView)
     }
     
 }
