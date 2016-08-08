@@ -19,7 +19,7 @@ internal class PeekViewController: UIViewController {
         // NOTE: it seems UIVisualEffectView has a blur radious too high for what we want to achieve... moreover
         // it's not safe to animate it's alpha component
         peekView = PeekView(frame: peekContext.initalPreviewFrame(), contentView: contentViewController.view)
-        contentView = UIScreen.mainScreen().blurredSnapshotView
+        contentView = UIApplication.sharedApplication().keyWindow!.blurredSnaphotView //UIScreen.mainScreen().blurredSnapshotView
         super.init(nibName: nil, bundle: nil)
         peekView.frame = convertedInitialFrame()
     }
@@ -85,8 +85,13 @@ private extension UIView {
     
     var snapshot: UIImage? {
         get {
-            UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0)
-            drawViewHierarchyInRect(bounds, afterScreenUpdates: true)
+            UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0.0)
+            if let context = UIGraphicsGetCurrentContext() {
+                layer.renderInContext(context)
+            }
+            else {
+                drawViewHierarchyInRect(bounds, afterScreenUpdates: false)
+            }
             let image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             return image
