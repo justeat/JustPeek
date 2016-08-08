@@ -42,17 +42,19 @@ class TableViewController: UITableViewController, PeekingDelegate {
     
     // MARK: PeekingDelegate
     
-    func peekController(controller: PeekController, peekContextForLocation location: CGPoint) -> PeekContext? {
+    func peekContext(context: PeekContext, viewControllerForPeekingAt location: CGPoint) -> UIViewController? {
         let viewController = storyboard?.instantiateViewControllerWithIdentifier("ViewController")
         if let viewController = viewController, indexPath = tableView.indexPathForRowAtPoint(location) {
             configureViewController(viewController, withItemAtIndexPath: indexPath)
-            let cell = tableView.cellForRowAtIndexPath(indexPath)
-            return PeekContext(destinationViewController: viewController, sourceRect: cell?.frame)
+            if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+                context.sourceRect = cell.frame
+            }
+            return viewController
         }
         return nil
     }
     
-    func peekController(controller: PeekController, commit viewController: UIViewController) {
+    func peekContext(context: PeekContext, commit viewController: UIViewController) {
         showViewController(viewController, sender: self)
     }
     

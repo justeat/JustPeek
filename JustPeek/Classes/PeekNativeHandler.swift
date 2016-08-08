@@ -10,24 +10,24 @@ import UIKit
 @available(iOS 9.0, *)
 internal class PeekNativeHandler: NSObject, PeekHandler, UIViewControllerPreviewingDelegate {
     
-    weak var peekController: PeekController?
     private var delegate: PeekingDelegate?
+    private var peekContext: PeekContext?
     
-    func register(viewController vc: UIViewController, forPeekingWithDelegate delegate: PeekingDelegate, sourceView: UIView) {
+    func register(viewController vc: UIViewController, forPeekingWithDelegate d: PeekingDelegate, sourceView: UIView) {
+        peekContext = PeekContext(sourceViewController: vc, sourceView: sourceView)
+        delegate = d
         vc.registerForPreviewingWithDelegate(self, sourceView: sourceView)
     }
     
-    func previewingContext(context: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        guard let peekController = peekController else { return nil }
-        let peekContext = delegate?.peekController(peekController, peekContextForLocation: location)
-        if let sourceRect = peekContext?.sourceRect {
-            context.sourceRect = sourceRect
-        }
+    func previewingContext(context: UIViewControllerPreviewing, viewControllerForLocation l: CGPoint) -> UIViewController? {
+        peekContext?.destinationViewController = delegate?.peekContext(peekContext!, viewControllerForPeekingAt: l)
         return peekContext?.destinationViewController
     }
     
-    func previewingContext(context: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
-        delegate?.peekController(PeekController(), commit: viewControllerToCommit)
+    func previewingContext(context: UIViewControllerPreviewing, commitViewController viewController: UIViewController) {
+        if let peekContext = peekContext {
+            delegate?.peekContext(peekContext, commit: viewController)
+        }
     }
     
 }

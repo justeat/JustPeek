@@ -9,37 +9,38 @@ import UIKit
 
 @objc(JEPeekContext) public class PeekContext: NSObject {
     
-    let destinationViewController: UIViewController
-    let sourceRect: CGRect?
+    internal struct AnimationConfiguration {
+        static let peekAnimationInsetMultiplier = CGFloat(0.05) // 5%
+        static let animationDuration: NSTimeInterval = 0.2
+        
+        static func initalPreviewFrame() -> CGRect {
+            return finalPreviewFrame().insetBy(percentage: AnimationConfiguration.peekAnimationInsetMultiplier)
+        }
+        
+        static func finalPreviewFrame() -> CGRect {
+            return UIScreen.mainScreen().bounds.insetBy(percentage: AnimationConfiguration.peekAnimationInsetMultiplier)
+        }
+    }
     
-    private let peekAnimationInsetMultiplier = CGFloat(0.1) // 10%
-    internal let animationDuration: NSTimeInterval = 0.2
+    public let sourceViewController: UIViewController
+    public let sourceView: UIView
     
-    public init(destinationViewController: UIViewController, sourceRect: CGRect? = nil) {
-        self.destinationViewController = destinationViewController
-        self.sourceRect = sourceRect
+    internal(set) public var destinationViewController: UIViewController?
+    public var sourceRect: CGRect
+    
+    internal init(sourceViewController: UIViewController, sourceView: UIView) {
+        self.sourceViewController = sourceViewController
+        self.sourceView = sourceView
+        sourceRect = AnimationConfiguration.initalPreviewFrame()
         super.init()
     }
     
     internal func initalPreviewFrame() -> CGRect {
-        var initialFrame = finalPreviewFrame().insetBy(percentage: peekAnimationInsetMultiplier)
-        if let sourceRect = sourceRect {
-            initialFrame = sourceRect
-        }
-        return initialFrame
+        return sourceRect
     }
     
     internal func finalPreviewFrame() -> CGRect {
-        return UIScreen.mainScreen().bounds.insetBy(percentage: peekAnimationInsetMultiplier)
-    }
-    
-}
-
-public extension PeekContext {
-    
-    // for ObjC supoprt
-    @objc public convenience init(destinationViewController: UIViewController, rect: CGRect) {
-        self.init(destinationViewController: destinationViewController, sourceRect: rect)
+        return AnimationConfiguration.finalPreviewFrame()
     }
     
 }

@@ -24,7 +24,29 @@ internal class PeekView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = min(frame.height, frame.width) * 0.05 // 5% of the smallest side
+        layer.cornerRadius = cornerRadiusFor(frame: frame)
+    }
+    
+    func animateToFrame(frame: CGRect, alongsideAnimation otherAnimation: (() -> ())? = nil, completion: ((Bool) -> ())? = nil) {
+        layoutIfNeeded()
+        let animations: () -> () = { [weak self] in
+            if let strongSelf = self {
+                otherAnimation?()
+                strongSelf.frame = frame
+                strongSelf.layoutIfNeeded()
+            }
+        }
+        let borderRadiusAnimation = CABasicAnimation(keyPath: "cornerRadius")
+        borderRadiusAnimation.fromValue = layer.cornerRadius
+        borderRadiusAnimation.toValue = cornerRadiusFor(frame: frame)
+        borderRadiusAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        layer.addAnimation(borderRadiusAnimation, forKey: "cornerRadiusAnimation")
+        let animationDuration = PeekContext.AnimationConfiguration.animationDuration
+        UIView.animateWithDuration(animationDuration, animations: animations, completion: completion)
+    }
+    
+    private func cornerRadiusFor(frame frame: CGRect) -> CGFloat {
+        return min(frame.height, frame.width) * 0.05 // 5% of the smallest side
     }
     
 }

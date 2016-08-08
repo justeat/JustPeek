@@ -19,13 +19,13 @@
 
 #pragma mark - JEPeekingDelegate
 
-- (JEPeekContext * _Nullable)peekController:(JEPeekController * _Nonnull)controller peekContextForLocation:(CGPoint)location {
+- (UIViewController *)peekContext:(JEPeekContext *)context viewControllerForPeekingAt:(CGPoint)location {
     UIViewController *viewController = [[UIViewController alloc] init];
-    return [[JEPeekContext alloc] initWithDestinationViewController:viewController rect:self.view.bounds];
+    return viewController;
 }
 
-- (void)peekController:(JEPeekController * _Nonnull)controller commit:(UIViewController * _Nonnull)viewController {
-    // do something
+- (void)peekContext:(JEPeekContext *)context commit:(UIViewController *)viewController {
+    // no-op
 }
 
 @end

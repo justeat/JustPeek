@@ -10,7 +10,7 @@ import UIKit
 
 class PeekReplacementHandler: PeekHandler {
     
-    var peekController: PeekController?
+    private var peekContext: PeekContext?
     private weak var delegate: PeekingDelegate?
     
     private var peekViewController: PeekViewController?
@@ -23,6 +23,7 @@ class PeekReplacementHandler: PeekHandler {
     
     func register(viewController vc: UIViewController, forPeekingWithDelegate delegate: PeekingDelegate, sourceView: UIView) {
         self.delegate = delegate
+        self.peekContext = PeekContext(sourceViewController: vc, sourceView: sourceView)
         let selector = #selector(handleLongPress(fromRecognizer:))
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: selector)
         sourceView.addGestureRecognizer(longPressGestureRecognizer)
@@ -42,12 +43,13 @@ class PeekReplacementHandler: PeekHandler {
     }
     
     private func peek(at location: CGPoint) {
-        guard let peekController = peekController else { return }
-        guard let context = delegate?.peekController(peekController, peekContextForLocation: location) else { return }
-        peekViewController = PeekViewController(peekContext: context)
+        guard let peekContext = peekContext else { return }
+        peekContext.destinationViewController = delegate?.peekContext(peekContext, viewControllerForPeekingAt: location)
+        peekViewController = PeekViewController(peekContext: peekContext)
+        guard let peekViewController = peekViewController else { return }
         presentationWindow.rootViewController = peekViewController
         presentationWindow.hidden = false
-        peekViewController!.peek()
+        peekViewController.peek()
     }
     
     private func pop() {

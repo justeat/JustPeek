@@ -9,19 +9,19 @@ import UIKit
 
 internal class PeekViewController: UIViewController {
     
-    private let peekView: PeekView
     private let peekContext: PeekContext
     private let contentView: UIView
+    private let peekView: PeekView
     
-    internal init(peekContext: PeekContext) {
+    internal init?(peekContext: PeekContext) {
         self.peekContext = peekContext
-        let contentViewController = peekContext.destinationViewController
-        contentViewController.view.backgroundColor = .greenColor() // TODO: remove me
-        peekView = PeekView(frame: peekContext.initalPreviewFrame(), contentView: contentViewController.view)
+        guard let contentViewController = peekContext.destinationViewController else { return nil }
         // NOTE: it seems UIVisualEffectView has a blur radious too high for what we want to achieve... moreover
         // it's not safe to animate it's alpha component
+        peekView = PeekView(frame: peekContext.initalPreviewFrame(), contentView: contentViewController.view)
         contentView = UIScreen.mainScreen().blurredSnapshotView
         super.init(nibName: nil, bundle: nil)
+        peekView.frame = convertedInitialFrame()
     }
     
     override func viewDidLoad() {
@@ -42,19 +42,19 @@ internal class PeekViewController: UIViewController {
         animatePeekView(false, completion: completion)
     }
     
+    private func convertedInitialFrame() -> CGRect {
+        return self.view.convertRect(peekContext.initalPreviewFrame(), fromView: peekContext.sourceView)
+    }
+    
     private func animatePeekView(forBeingPresented: Bool, completion: ((Bool) -> ())?) {
+        let destinationFrame = forBeingPresented ? peekContext.finalPreviewFrame() : convertedInitialFrame()
         contentView.alpha = forBeingPresented ? 0.0 : 1.0
-        let tempFrame = forBeingPresented ? peekContext.finalPreviewFrame() : peekContext.initalPreviewFrame()
-        let destinationFrame = peekView.convertRect(tempFrame, fromView: peekContext.destinationViewController.view)
-        peekView.layoutIfNeeded()
-        let animations: () -> () = { [weak self] in
+        let contentViewAnimation = { [weak self] in
             if let strongSelf = self {
                 strongSelf.contentView.alpha = 1.0 - strongSelf.contentView.alpha
-                strongSelf.peekView.frame = destinationFrame
-                strongSelf.peekView.layoutIfNeeded()
             }
         }
-        UIView.animateWithDuration(peekContext.animationDuration, animations: animations, completion: completion)
+        peekView.animateToFrame(destinationFrame, alongsideAnimation: contentViewAnimation, completion: completion)
     }
     
 }
