@@ -1,4 +1,4 @@
-<p align="center"><img src ="just_peek_banner.png?raw=true" /></p>
+<p align="center"><img src="just_peek_banner.png?raw=true" /></p>
 
 # JustPeek
 
@@ -56,10 +56,6 @@ JustPeek is available through [CocoaPods](http://cocoapods.org). To install it, 
 ```ruby
 pod "JustPeek"
 ```
-
-## Author
-
-[Gianluca Tranchedone](https://github.com/gtranchedone)
 
 ## License
 

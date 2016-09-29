@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  JustPeek
 //
-//  Created by Gianluca Tranchedone for JustEat on 05/08/2016.
+//  Copyright 2016 Just Eat Holdings Ltd.
 //
 
 
