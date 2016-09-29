@@ -2,9 +2,9 @@
 //  AppDelegate.swift
 //  JustPeek
 //
-//  Created by Gianluca Tranchedone on 08/03/2016.
-//  Copyright (c) 2016 Gianluca Tranchedone. All rights reserved.
+//  Created by Gianluca Tranchedone for JustEat on 05/08/2016.
 //
+
 
 import UIKit
 

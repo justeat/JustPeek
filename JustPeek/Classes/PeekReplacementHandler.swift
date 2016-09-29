@@ -1,9 +1,8 @@
 //
 //  PeekReplacementHandler.swift
-//  Pods
+//  JustPeek
 //
-//  Created by Gianluca Tranchedone on 05/08/2016.
-//
+//  Created by Gianluca Tranchedone for JustEat on 05/08/2016.
 //
 
 import UIKit

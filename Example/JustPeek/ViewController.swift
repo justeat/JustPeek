@@ -2,9 +2,9 @@
 //  ViewController.swift
 //  JustPeek
 //
-//  Created by Gianluca Tranchedone on 08/03/2016.
-//  Copyright (c) 2016 Gianluca Tranchedone. All rights reserved.
+//  Created by Gianluca Tranchedone for JustEat on 05/08/2016.
 //
+
 
 import UIKit
 
@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(3 * NSEC_PER_SEC))
+        let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC))
         dispatch_after(delay, dispatch_get_main_queue()) { [weak self] in
             self?.updateView()
         }
