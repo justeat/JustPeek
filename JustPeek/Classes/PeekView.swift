@@ -13,8 +13,8 @@ internal class PeekView: UIView {
         super.init(frame: frame)
         addSubview(contentView)
         contentView.frame = bounds
-        contentView.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
-        userInteractionEnabled = false
+        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        isUserInteractionEnabled = false
         clipsToBounds = true
     }
     
@@ -27,7 +27,7 @@ internal class PeekView: UIView {
         layer.cornerRadius = cornerRadiusFor(frame: frame)
     }
     
-    func animateToFrame(frame: CGRect, alongsideAnimation otherAnimation: (() -> ())? = nil, completion: ((Bool) -> ())? = nil) {
+    func animateToFrame(_ frame: CGRect, alongsideAnimation otherAnimation: (() -> ())? = nil, completion: ((Bool) -> ())? = nil) {
         layoutIfNeeded()
         let animations: () -> () = { [weak self] in
             if let strongSelf = self {
@@ -40,12 +40,12 @@ internal class PeekView: UIView {
         borderRadiusAnimation.fromValue = layer.cornerRadius
         borderRadiusAnimation.toValue = cornerRadiusFor(frame: frame)
         borderRadiusAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-        layer.addAnimation(borderRadiusAnimation, forKey: "cornerRadiusAnimation")
+        layer.add(borderRadiusAnimation, forKey: "cornerRadiusAnimation")
         let animationDuration = PeekContext.AnimationConfiguration.animationDuration
-        UIView.animateWithDuration(animationDuration, animations: animations, completion: completion)
+        UIView.animate(withDuration: animationDuration, animations: animations, completion: completion)
     }
     
-    private func cornerRadiusFor(frame frame: CGRect) -> CGFloat {
+    fileprivate func cornerRadiusFor(frame: CGRect) -> CGFloat {
         return min(frame.height, frame.width) * 0.05 // 5% of the smallest side
     }
     

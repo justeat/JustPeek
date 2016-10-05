@@ -9,13 +9,13 @@ import UIKit
 
 class PeekReplacementHandler: PeekHandler {
     
-    private var peekContext: PeekContext?
-    private weak var delegate: PeekingDelegate?
+    fileprivate var peekContext: PeekContext?
+    fileprivate weak var delegate: PeekingDelegate?
     
-    private var peekViewController: PeekViewController?
-    private lazy var presentationWindow: UIWindow! = {
+    fileprivate var peekViewController: PeekViewController?
+    fileprivate lazy var presentationWindow: UIWindow! = {
         let window = UIWindow()
-        window.backgroundColor = .clearColor()
+        window.backgroundColor = UIColor.clear
         window.windowLevel = UIWindowLevelAlert
         return window
     }()
@@ -30,10 +30,10 @@ class PeekReplacementHandler: PeekHandler {
     
     @objc internal func handleLongPress(fromRecognizer gestureRecognizer: UILongPressGestureRecognizer) {
         switch gestureRecognizer.state {
-        case .Began:
-            peek(at: gestureRecognizer.locationInView(gestureRecognizer.view))
+        case .began:
+            peek(at: gestureRecognizer.location(in: gestureRecognizer.view))
             
-        case .Ended, .Cancelled:
+        case .ended, .cancelled:
             pop()
             
         default:
@@ -41,20 +41,20 @@ class PeekReplacementHandler: PeekHandler {
         }
     }
     
-    private func peek(at location: CGPoint) {
+    fileprivate func peek(at location: CGPoint) {
         guard let peekContext = peekContext else { return }
         peekContext.destinationViewController = delegate?.peekContext(peekContext, viewControllerForPeekingAt: location)
         peekViewController = PeekViewController(peekContext: peekContext)
         guard let peekViewController = peekViewController else { return }
         presentationWindow.rootViewController = peekViewController
-        presentationWindow.hidden = false
+        presentationWindow.isHidden = false
         peekViewController.peek()
     }
     
-    private func pop() {
-        let window = presentationWindow
+    fileprivate func pop() {
+        let window = presentationWindow!
         peekViewController?.pop({ (_) in
-            window.hidden = true
+            window.isHidden = true
         })
     }
     

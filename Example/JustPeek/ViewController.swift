@@ -18,20 +18,20 @@ class ViewController: UIViewController {
         titleLabel.alpha = 0.0
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC))
-        dispatch_after(delay, dispatch_get_main_queue()) { [weak self] in
+        let delay = DispatchTime.now() + Double(Int64(1 * NSEC_PER_SEC)) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: delay) { [weak self] in
             self?.updateView()
         }
     }
     
-    private func updateView() {
+    fileprivate func updateView() {
         titleLabel.text = title ?? NSStringFromClass(ViewController.self)
-        UIView.animateWithDuration(0.25) { [weak self] in
+        UIView.animate(withDuration: 0.25, animations: { [weak self] in
             self?.loadingView.alpha = 0.0
             self?.titleLabel.alpha = 1.0
-        }
+        }) 
     }
 
 }
