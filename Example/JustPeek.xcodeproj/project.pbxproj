@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		613319A31D54E33C00051F47 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613319A21D54E33C00051F47 /* ImageViewController.m */; };
+		61D0891C1DBA28F600C1ED64 /* JustPeek_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0891B1DBA28F600C1ED64 /* JustPeek_UITests.swift */; };
 		61D9BB831D523DDC00D1C441 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D9BB821D523DDC00D1C441 /* TableViewController.swift */; };
 		E39059C9AC430E0D148F41D9 /* Pods_JustPeek_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88956AF3E52AEB7849DC5A1E /* Pods_JustPeek_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
 			remoteInfo = JustPeek;
+		};
+		61D0891E1DBA28F600C1ED64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = JustPeek_Example;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -47,6 +55,9 @@
 		613319A01D54E33C00051F47 /* JustPeek_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JustPeek_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		613319A11D54E33C00051F47 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		613319A21D54E33C00051F47 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		61D089191DBA28F600C1ED64 /* JustPeek_UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustPeek_UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		61D0891B1DBA28F600C1ED64 /* JustPeek_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustPeek_UITests.swift; sourceTree = "<group>"; };
+		61D0891D1DBA28F600C1ED64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61D9BB821D523DDC00D1C441 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7DB1617E1C9749D824CF9280 /* Pods_JustPeek_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustPeek_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88956AF3E52AEB7849DC5A1E /* Pods_JustPeek_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustPeek_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +80,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E39059C9AC430E0D148F41D9 /* Pods_JustPeek_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61D089161DBA28F600C1ED64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +119,7 @@
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for JustPeek */,
 				607FACE81AFB9204008FA782 /* Tests */,
+				61D0891A1DBA28F600C1ED64 /* JustPeek_UITests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				30677202425EA285B797474B /* Pods */,
 				0129482753EE9E1CBCB0B63C /* Frameworks */,
@@ -112,6 +131,7 @@
 			children = (
 				607FACD01AFB9204008FA782 /* JustPeek_Example.app */,
 				607FACE51AFB9204008FA782 /* JustPeek_Tests.xctest */,
+				61D089191DBA28F600C1ED64 /* JustPeek_UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +189,15 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		61D0891A1DBA28F600C1ED64 /* JustPeek_UITests */ = {
+			isa = PBXGroup;
+			children = (
+				61D0891B1DBA28F600C1ED64 /* JustPeek_UITests.swift */,
+				61D0891D1DBA28F600C1ED64 /* Info.plist */,
+			);
+			path = JustPeek_UITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,13 +242,31 @@
 			productReference = 607FACE51AFB9204008FA782 /* JustPeek_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		61D089181DBA28F600C1ED64 /* JustPeek_UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61D089221DBA28F600C1ED64 /* Build configuration list for PBXNativeTarget "JustPeek_UITests" */;
+			buildPhases = (
+				61D089151DBA28F600C1ED64 /* Sources */,
+				61D089161DBA28F600C1ED64 /* Frameworks */,
+				61D089171DBA28F600C1ED64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				61D0891F1DBA28F600C1ED64 /* PBXTargetDependency */,
+			);
+			name = JustPeek_UITests;
+			productName = JustPeek_UITests;
+			productReference = 61D089191DBA28F600C1ED64 /* JustPeek_UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
@@ -230,6 +277,11 @@
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0800;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+					61D089181DBA28F600C1ED64 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -249,6 +301,7 @@
 			targets = (
 				607FACCF1AFB9204008FA782 /* JustPeek_Example */,
 				607FACE41AFB9204008FA782 /* JustPeek_Tests */,
+				61D089181DBA28F600C1ED64 /* JustPeek_UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -265,6 +318,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		607FACE31AFB9204008FA782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61D089171DBA28F600C1ED64 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -386,6 +446,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		61D089151DBA28F600C1ED64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61D0891C1DBA28F600C1ED64 /* JustPeek_UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -393,6 +461,11 @@
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* JustPeek_Example */;
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+		};
+		61D0891F1DBA28F600C1ED64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* JustPeek_Example */;
+			targetProxy = 61D0891E1DBA28F600C1ED64 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -568,6 +641,40 @@
 			};
 			name = Release;
 		};
+		61D089201DBA28F600C1ED64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = JustPeek_UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.just-eat.JustPeek-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = JustPeek_Example;
+			};
+			name = Debug;
+		};
+		61D089211DBA28F600C1ED64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				INFOPLIST_FILE = JustPeek_UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.just-eat.JustPeek-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = JustPeek_Example;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -597,6 +704,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		61D089221DBA28F600C1ED64 /* Build configuration list for PBXNativeTarget "JustPeek_UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61D089201DBA28F600C1ED64 /* Debug */,
+				61D089211DBA28F600C1ED64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

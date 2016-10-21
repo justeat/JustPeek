@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     }
     
     private func updateView() {
-        titleLabel.text = title ?? NSStringFromClass(ViewController.self)
+        titleLabel.text = "\(title ?? NSStringFromClass(ViewController.self)) Details"
         UIView.animateWithDuration(0.25) { [weak self] in
             self?.loadingView.alpha = 0.0
             self?.titleLabel.alpha = 1.0
@@ -35,4 +35,3 @@ class ViewController: UIViewController {
     }
 
 }
-

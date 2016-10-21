@@ -53,6 +53,16 @@
                ReferencedContainer = "container:JustPeek.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "61D089181DBA28F600C1ED64"
+               BuildableName = "JustPeek_UITests.xctest"
+               BlueprintName = "JustPeek_UITests"
+               ReferencedContainer = "container:JustPeek.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

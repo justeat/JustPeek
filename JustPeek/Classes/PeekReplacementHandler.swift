@@ -12,11 +12,15 @@ class PeekReplacementHandler: PeekHandler {
     private var peekContext: PeekContext?
     private weak var delegate: PeekingDelegate?
     
+    private var preventFromPopping: Bool = false
+    private var startingLocation: CGPoint?
+    
     private var peekViewController: PeekViewController?
     private lazy var presentationWindow: UIWindow! = {
         let window = UIWindow()
         window.backgroundColor = .clearColor()
         window.windowLevel = UIWindowLevelAlert
+        window.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pop)))
         return window
     }()
     
@@ -31,17 +35,31 @@ class PeekReplacementHandler: PeekHandler {
     @objc internal func handleLongPress(fromRecognizer gestureRecognizer: UILongPressGestureRecognizer) {
         switch gestureRecognizer.state {
         case .Began:
-            peek(at: gestureRecognizer.locationInView(gestureRecognizer.view))
+            startingLocation = gestureRecognizer.locationInView(gestureRecognizer.view)
+            peek(at: startingLocation!)
+            
+        case .Changed:
+            let currentLocation = gestureRecognizer.locationInView(gestureRecognizer.view)
+            if let startLocation = startingLocation where abs(currentLocation.y - startLocation.y) > 50 {
+                preventFromPopping = true
+            }
+            break
             
         case .Ended, .Cancelled:
-            pop()
+            if !preventFromPopping {
+                // delay for UI Tests
+                let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC)))
+                dispatch_after(delayTime, dispatch_get_main_queue()) { [weak self] in
+                    self?.pop()
+                }
+            }
             
         default:
             break
         }
     }
     
-    private func peek(at location: CGPoint) {
+    @objc internal func peek(at location: CGPoint) {
         guard let peekContext = peekContext else { return }
         peekContext.destinationViewController = delegate?.peekContext(peekContext, viewControllerForPeekingAt: location)
         peekViewController = PeekViewController(peekContext: peekContext)
@@ -51,7 +69,8 @@ class PeekReplacementHandler: PeekHandler {
         peekViewController.peek()
     }
     
-    private func pop() {
+    @objc internal func pop() {
+        preventFromPopping = false
         let window = presentationWindow
         peekViewController?.pop({ (_) in
             window.hidden = true
