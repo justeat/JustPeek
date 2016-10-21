@@ -24,9 +24,9 @@ JustPeek is an iOS Library that adds support for Force Touch-like Peek and Pop i
   s.homepage         = 'https://github.com/justeat/JustPeek'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'Apache 2.0', :file => 'LICENSE' }
-  s.author           = { 'Gianluca Tranchedone' => 'g.tranchedone@gmail.com' }
+  s.author           = 'Just Eat'
   s.source           = { :git => 'https://github.com/justeat/JustPeek.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/gtranchedone'
+  s.social_media_url = 'https://github.com/justeat'
 
   s.ios.deployment_target = '8.0'
 

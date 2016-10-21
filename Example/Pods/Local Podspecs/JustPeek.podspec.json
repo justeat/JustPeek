@@ -8,9 +8,7 @@
     "type": "Apache 2.0",
     "file": "LICENSE"
   },
-  "authors": {
-    "Gianluca Tranchedone": "g.tranchedone@gmail.com"
-  },
+  "authors": "Just Eat",
   "source": {
     "git": "https://github.com/justeat/JustPeek.git",
     "tag": "0.1.0"
