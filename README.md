@@ -2,7 +2,7 @@
 
 # JustPeek
 
-<!-- [![CI Status](http://img.shields.io/travis/Gianluca Tranchedone/JustPeek.svg?style=flat)](https://travis-ci.org/Gianluca Tranchedone/JustPeek) -->
+<!-- [![CI Status](http://img.shields.io/travis/justeat/JustPeek.svg?style=flat)](https://travis-ci.org/justeat/JustPeek) -->
 [![Version](https://img.shields.io/cocoapods/v/JustPeek.svg?style=flat)](http://cocoapods.org/pods/JustPeek)
 [![License](https://img.shields.io/cocoapods/l/JustPeek.svg?style=flat)](http://cocoapods.org/pods/JustPeek)
 [![Platform](https://img.shields.io/cocoapods/p/JustPeek.svg?style=flat)](http://cocoapods.org/pods/JustPeek)
