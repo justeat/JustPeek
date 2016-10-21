@@ -7,13 +7,15 @@
 
 import UIKit
 
-class PeekReplacementHandler: PeekHandler {
+internal class PeekReplacementHandler: PeekHandler {
     
     private var peekContext: PeekContext?
     private weak var delegate: PeekingDelegate?
     
-    private var preventFromPopping: Bool = false
-    private var startingLocation: CGPoint?
+    private let longPressDurationForCommitting = 5.0
+    private var commitOperation: NSOperation?
+    private var peekStartLocation: CGPoint?
+    private var preventFromPopping = false
     
     private var peekViewController: PeekViewController?
     private lazy var presentationWindow: UIWindow! = {
@@ -35,13 +37,23 @@ class PeekReplacementHandler: PeekHandler {
     @objc internal func handleLongPress(fromRecognizer gestureRecognizer: UILongPressGestureRecognizer) {
         switch gestureRecognizer.state {
         case .Began:
-            startingLocation = gestureRecognizer.locationInView(gestureRecognizer.view)
-            peek(at: startingLocation!)
+            peekStartLocation = gestureRecognizer.locationInView(gestureRecognizer.view)
+            peek(at: peekStartLocation!)
+            commitOperation = NSBlockOperation(block: { [weak self] in
+                self?.commit()
+            })
+            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(longPressDurationForCommitting * Double(NSEC_PER_SEC)))
+            dispatch_after(delayTime, dispatch_get_main_queue()) { [weak self] in
+                if let commitOperation = self?.commitOperation where !commitOperation.cancelled {
+                    NSOperationQueue.mainQueue().addOperation(commitOperation)
+                }
+            }
             
         case .Changed:
             let currentLocation = gestureRecognizer.locationInView(gestureRecognizer.view)
-            if let startLocation = startingLocation where abs(currentLocation.y - startLocation.y) > 50 {
+            if let startLocation = peekStartLocation where abs(currentLocation.y - startLocation.y) > 50 {
                 preventFromPopping = true
+                commitOperation?.cancel()
             }
             break
             
@@ -69,12 +81,22 @@ class PeekReplacementHandler: PeekHandler {
         peekViewController.peek()
     }
     
-    @objc internal func pop() {
+    @objc internal func pop(completion: (Void -> Void)? = nil) {
         preventFromPopping = false
         let window = presentationWindow
         peekViewController?.pop({ (_) in
             window.hidden = true
+            completion?()
         })
+    }
+    
+    @objc internal func commit() {
+        preventFromPopping = false
+        pop { [weak self] in
+            guard let strongSelf = self, let peekContext = strongSelf.peekContext else { return }
+            guard let destinationViewController = peekContext.destinationViewController else { return }
+            strongSelf.delegate?.peekContext(peekContext, commit: destinationViewController)
+        }
     }
     
 }

@@ -8,14 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		3385CEA0B201C6F9644215A9 /* Pods_JustPeek_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB1617E1C9749D824CF9280 /* Pods_JustPeek_Example.framework */; };
+		49937D85E954DDC426A50FF3 /* Pods_JustPeek_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80FBBA147F1B53DF1E5E951 /* Pods_JustPeek_UITests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		607FACEC1AFB9204008FA782 /* PeekNativeHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* PeekNativeHandlerTests.swift */; };
 		613319A31D54E33C00051F47 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613319A21D54E33C00051F47 /* ImageViewController.m */; };
-		61D0891C1DBA28F600C1ED64 /* JustPeek_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0891B1DBA28F600C1ED64 /* JustPeek_UITests.swift */; };
+		61C4F9FF1DBA700200085D5B /* PeekReplacementHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C4F9FE1DBA700200085D5B /* PeekReplacementHandler.swift */; };
+		61D0891C1DBA28F600C1ED64 /* TableViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0891B1DBA28F600C1ED64 /* TableViewControllerUITests.swift */; };
 		61D9BB831D523DDC00D1C441 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D9BB821D523DDC00D1C441 /* TableViewController.swift */; };
 		E39059C9AC430E0D148F41D9 /* Pods_JustPeek_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88956AF3E52AEB7849DC5A1E /* Pods_JustPeek_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -51,19 +53,23 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* JustPeek_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustPeek_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* PeekNativeHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekNativeHandlerTests.swift; sourceTree = "<group>"; };
 		613319A01D54E33C00051F47 /* JustPeek_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JustPeek_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		613319A11D54E33C00051F47 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		613319A21D54E33C00051F47 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		61C4F9FE1DBA700200085D5B /* PeekReplacementHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeekReplacementHandler.swift; sourceTree = "<group>"; };
 		61D089191DBA28F600C1ED64 /* JustPeek_UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustPeek_UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		61D0891B1DBA28F600C1ED64 /* JustPeek_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustPeek_UITests.swift; sourceTree = "<group>"; };
+		61D0891B1DBA28F600C1ED64 /* TableViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerUITests.swift; sourceTree = "<group>"; };
 		61D0891D1DBA28F600C1ED64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61D9BB821D523DDC00D1C441 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7DB1617E1C9749D824CF9280 /* Pods_JustPeek_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustPeek_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88956AF3E52AEB7849DC5A1E /* Pods_JustPeek_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustPeek_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B80FBBA147F1B53DF1E5E951 /* Pods_JustPeek_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustPeek_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD314119D10D0CCD6044E2DF /* JustPeek.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JustPeek.podspec; path = ../JustPeek.podspec; sourceTree = "<group>"; };
 		D2DFDE425EC823CFB56F8914 /* Pods-JustPeek_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustPeek_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustPeek_Tests/Pods-JustPeek_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D90A26288CFB4613B3F454C8 /* Pods-JustPeek_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustPeek_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustPeek_Example/Pods-JustPeek_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E28C1E55A665EFA7720B4041 /* Pods-JustPeek_UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustPeek_UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustPeek_UITests/Pods-JustPeek_UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FF3A081790DBE43137B37442 /* Pods-JustPeek_UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustPeek_UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustPeek_UITests/Pods-JustPeek_UITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49937D85E954DDC426A50FF3 /* Pods_JustPeek_UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +105,7 @@
 			children = (
 				7DB1617E1C9749D824CF9280 /* Pods_JustPeek_Example.framework */,
 				88956AF3E52AEB7849DC5A1E /* Pods_JustPeek_Tests.framework */,
+				B80FBBA147F1B53DF1E5E951 /* Pods_JustPeek_UITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,6 +117,8 @@
 				10742E68F01675869C8C7248 /* Pods-JustPeek_Example.release.xcconfig */,
 				24F4C11555FF982198F6B48B /* Pods-JustPeek_Tests.debug.xcconfig */,
 				D2DFDE425EC823CFB56F8914 /* Pods-JustPeek_Tests.release.xcconfig */,
+				E28C1E55A665EFA7720B4041 /* Pods-JustPeek_UITests.debug.xcconfig */,
+				FF3A081790DBE43137B37442 /* Pods-JustPeek_UITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -119,7 +129,7 @@
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for JustPeek */,
 				607FACE81AFB9204008FA782 /* Tests */,
-				61D0891A1DBA28F600C1ED64 /* JustPeek_UITests */,
+				61D0891A1DBA28F600C1ED64 /* UITests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				30677202425EA285B797474B /* Pods */,
 				0129482753EE9E1CBCB0B63C /* Frameworks */,
@@ -165,7 +175,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				607FACEB1AFB9204008FA782 /* PeekNativeHandlerTests.swift */,
+				61C4F9FE1DBA700200085D5B /* PeekReplacementHandler.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -189,12 +200,13 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		61D0891A1DBA28F600C1ED64 /* JustPeek_UITests */ = {
+		61D0891A1DBA28F600C1ED64 /* UITests */ = {
 			isa = PBXGroup;
 			children = (
-				61D0891B1DBA28F600C1ED64 /* JustPeek_UITests.swift */,
+				61D0891B1DBA28F600C1ED64 /* TableViewControllerUITests.swift */,
 				61D0891D1DBA28F600C1ED64 /* Info.plist */,
 			);
+			name = UITests;
 			path = JustPeek_UITests;
 			sourceTree = "<group>";
 		};
@@ -246,9 +258,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 61D089221DBA28F600C1ED64 /* Build configuration list for PBXNativeTarget "JustPeek_UITests" */;
 			buildPhases = (
+				2659AB5DF86941BB0ECC6546 /* [CP] Check Pods Manifest.lock */,
 				61D089151DBA28F600C1ED64 /* Sources */,
 				61D089161DBA28F600C1ED64 /* Frameworks */,
 				61D089171DBA28F600C1ED64 /* Resources */,
+				3D8C0CD8135021A7A1EFD4CA /* [CP] Embed Pods Frameworks */,
+				AA7AB24B3E0A396055854DEB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -364,6 +379,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		2659AB5DF86941BB0ECC6546 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3D8C0CD8135021A7A1EFD4CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustPeek_UITests/Pods-JustPeek_UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5AE0544025F9595CC9A0738B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,6 +437,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustPeek_Example/Pods-JustPeek_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA7AB24B3E0A396055854DEB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustPeek_UITests/Pods-JustPeek_UITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B262F432EC88F07B2016CFFB /* [CP] Embed Pods Frameworks */ = {
@@ -442,7 +502,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				61C4F9FF1DBA700200085D5B /* PeekReplacementHandler.swift in Sources */,
+				607FACEC1AFB9204008FA782 /* PeekNativeHandlerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61D0891C1DBA28F600C1ED64 /* JustPeek_UITests.swift in Sources */,
+				61D0891C1DBA28F600C1ED64 /* TableViewControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,6 +704,7 @@
 		};
 		61D089201DBA28F600C1ED64 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E28C1E55A665EFA7720B4041 /* Pods-JustPeek_UITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -661,6 +723,7 @@
 		};
 		61D089211DBA28F600C1ED64 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF3A081790DBE43137B37442 /* Pods-JustPeek_UITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -685,7 +748,7 @@
 				607FACEE1AFB9204008FA782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "JustPeek_Example" */ = {
 			isa = XCConfigurationList;
@@ -694,7 +757,7 @@
 				607FACF11AFB9204008FA782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "JustPeek_Tests" */ = {
 			isa = XCConfigurationList;
@@ -703,7 +766,7 @@
 				607FACF41AFB9204008FA782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		61D089221DBA28F600C1ED64 /* Build configuration list for PBXNativeTarget "JustPeek_UITests" */ = {
 			isa = XCConfigurationList;
@@ -712,6 +775,7 @@
 				61D089211DBA28F600C1ED64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

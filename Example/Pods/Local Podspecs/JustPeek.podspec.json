@@ -13,6 +13,7 @@
     "git": "https://github.com/justeat/JustPeek.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://github.com/justeat",
   "platforms": {
     "ios": "8.0"
   },

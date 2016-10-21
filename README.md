@@ -2,7 +2,7 @@
 
 # JustPeek
 
-<!-- [![CI Status](http://img.shields.io/travis/justeat/JustPeek.svg?style=flat)](https://travis-ci.org/justeat/JustPeek) -->
+[![CI Status](http://img.shields.io/travis/justeat/JustPeek.svg?style=flat)](https://travis-ci.org/justeat/JustPeek)
 [![Version](https://img.shields.io/cocoapods/v/JustPeek.svg?style=flat)](http://cocoapods.org/pods/JustPeek)
 [![License](https://img.shields.io/cocoapods/l/JustPeek.svg?style=flat)](http://cocoapods.org/pods/JustPeek)
 [![Platform](https://img.shields.io/cocoapods/p/JustPeek.svg?style=flat)](http://cocoapods.org/pods/JustPeek)
@@ -57,6 +57,20 @@ JustPeek is available through [CocoaPods](http://cocoapods.org). To install it, 
 
 ```ruby
 pod "JustPeek"
+```
+
+If you use Swift 3 in your project, you can either point to the `swift3` branch or add the following code to your `Podfile`:
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.name == "JustPeek" do
+      target.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = '2.3'
+      end
+    end
+  end
+end
 ```
 
 ## License

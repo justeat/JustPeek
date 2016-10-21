@@ -6,4 +6,8 @@ target 'JustPeek_Example' do
   target 'JustPeek_Tests' do
     inherit! :search_paths
   end
+
+  target 'JustPeek_UITests' do
+    inherit! :search_paths
+  end
 end
