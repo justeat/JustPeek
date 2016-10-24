@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JustPeek'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'iOS Library that adds support for Force Touch-like Peek and Pop interactions on older devices'
 
   # This description is used to generate tags and improve search results.
