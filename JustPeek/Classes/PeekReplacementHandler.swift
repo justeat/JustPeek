@@ -12,7 +12,7 @@ internal class PeekReplacementHandler: PeekHandler {
     private var peekContext: PeekContext?
     private weak var delegate: PeekingDelegate?
     
-    private let longPressDurationForCommitting = 5.0
+    private let longPressDurationForCommitting = 3.0
     private var commitOperation: NSOperation?
     private var peekStartLocation: CGPoint?
     private var preventFromPopping = false
@@ -39,12 +39,13 @@ internal class PeekReplacementHandler: PeekHandler {
         case .Began:
             peekStartLocation = gestureRecognizer.locationInView(gestureRecognizer.view)
             peek(at: peekStartLocation!)
-            commitOperation = NSBlockOperation(block: { [weak self] in
+            let commitOperation = NSBlockOperation(block: { [weak self] in
                 self?.commit()
             })
+            self.commitOperation = commitOperation
             let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(longPressDurationForCommitting * Double(NSEC_PER_SEC)))
-            dispatch_after(delayTime, dispatch_get_main_queue()) { [weak self] in
-                if let commitOperation = self?.commitOperation where !commitOperation.cancelled {
+            dispatch_after(delayTime, dispatch_get_main_queue()) {
+                if !commitOperation.cancelled {
                     NSOperationQueue.mainQueue().addOperation(commitOperation)
                 }
             }
@@ -58,6 +59,7 @@ internal class PeekReplacementHandler: PeekHandler {
             break
             
         case .Ended, .Cancelled:
+            commitOperation?.cancel()
             if !preventFromPopping {
                 // delay for UI Tests
                 let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC)))
