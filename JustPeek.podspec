@@ -27,7 +27,7 @@ Under the hood it uses the native implementation if available, otherwise a custo
   s.license          = { :type => 'Apache 2.0', :file => 'LICENSE' }
   s.author           = 'Just Eat'
   s.source           = { :git => 'https://github.com/justeat/JustPeek.git', :tag => s.version.to_s }
-  s.social_media_url = 'https://github.com/justeat'
+  s.social_media_url = 'https://twitter.com/justeat_tech'
 
   s.ios.deployment_target = '8.0'
 
