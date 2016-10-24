@@ -1,4 +1,4 @@
-<p align="center"><img src="just_peek_banner.png?raw=true" /></p>
+<p align="center"><img src="just_peek_banner.png?raw=true" alt="JustPeek Banner" /></p>
 
 # JustPeek
 
@@ -9,7 +9,7 @@
 
 JustPeek is an iOS Library that adds support for Force Touch-like Peek and Pop interactions on devices that do not natively support this kind of interaction. Under the hood it uses the native implementation if available, otherwise a custom implementation based on `UILongPressGestureRecognizer`.
 
-<p align="center"><img src="just_peek_demo.gif?raw=true" /></p>
+<p align="center"><img src="https://github.com/justeat/JustPeek/blob/master/just_peek_demo.gif?raw=true" alt="JustPeek Demo"  width="320px" height="568px" /></p>
 
 ## Usage
 
