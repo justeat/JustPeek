@@ -18,7 +18,8 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-JustPeek is an iOS Library that adds support for Force Touch-like Peek and Pop interactions on devices that do not natively support this kind of interaction. Under the hood it uses the native implementation if available, otherwise a custom implementation based on UILongPressGestureRecognizer.
+JustPeek is an iOS Library that adds support for Force Touch-like Peek and Pop interactions on devices that do not natively support it due to lack of force recognition in the screen.
+Under the hood it uses the native implementation if available, otherwise a custom implementation based on UILongPressGestureRecognizer.
                        DESC
 
   s.homepage         = 'https://github.com/justeat/JustPeek'
