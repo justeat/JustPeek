@@ -62,6 +62,7 @@ class TableViewController: UITableViewController, PeekingDelegate {
     private func configureViewController(viewController: UIViewController, withItemAtIndexPath indexPath: NSIndexPath) {
         guard let cell = tableView.cellForRowAtIndexPath(indexPath) else { return }
         viewController.title = cell.textLabel?.text
+        viewController.view.accessibilityLabel = "Preview for \(viewController.title!)"
     }
     
 }

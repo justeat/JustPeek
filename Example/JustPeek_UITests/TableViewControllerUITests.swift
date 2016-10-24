@@ -32,7 +32,7 @@ class TableViewControllerUITests: XCTestCase {
         row3.press(forDuration: longPressDurationForPreview)
         
         // Assert that we see the preview UIViewController
-        XCTAssertTrue(app.staticTexts["Loading..."].exists)
+        XCTAssertTrue(app.otherElements["Preview for Row 3"].exists)
         
         // Assert we're still in the same UIViewController
         XCTAssertTrue(app.navigationBars.staticTexts["JustPeek"].exists)
@@ -46,6 +46,7 @@ class TableViewControllerUITests: XCTestCase {
         row3.press(forDuration: longPressDurationForPreview, thenDragTo: app.navigationBars.element(boundBy: 0))
         
         // Assert that we see the preview UIViewController and that it updates live
+        XCTAssertTrue(app.otherElements["Preview for Row 3"].exists)
         XCTAssertTrue(app.windows.staticTexts["Loading..."].exists)
         let label = app.windows.staticTexts["Row 3 Details"]
         let exists = NSPredicate(format: "exists == true")

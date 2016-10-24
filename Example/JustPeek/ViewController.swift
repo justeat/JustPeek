@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC))
+        let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(1.3 * Double(NSEC_PER_SEC)))
         dispatch_after(delay, dispatch_get_main_queue()) { [weak self] in
             self?.updateView()
         }
