@@ -9,18 +9,18 @@ import UIKit
 
 internal class PeekReplacementHandler: PeekHandler {
     
-    private var peekContext: PeekContext?
-    private weak var delegate: PeekingDelegate?
+    fileprivate var peekContext: PeekContext?
+    fileprivate weak var delegate: PeekingDelegate?
     
-    private let longPressDurationForCommitting = 3.0
-    private var commitOperation: NSOperation?
-    private var peekStartLocation: CGPoint?
-    private var preventFromPopping = false
+    fileprivate let longPressDurationForCommitting = 3.0
+    fileprivate var commitOperation: Operation?
+    fileprivate var peekStartLocation: CGPoint?
+    fileprivate var preventFromPopping = false
     
-    private var peekViewController: PeekViewController?
-    private lazy var presentationWindow: UIWindow! = {
+    fileprivate var peekViewController: PeekViewController?
+    fileprivate lazy var presentationWindow: UIWindow! = {
         let window = UIWindow()
-        window.backgroundColor = .clearColor()
+        window.backgroundColor = UIColor.clear
         window.windowLevel = UIWindowLevelAlert
         window.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pop)))
         return window
@@ -36,34 +36,34 @@ internal class PeekReplacementHandler: PeekHandler {
     
     @objc internal func handleLongPress(fromRecognizer gestureRecognizer: UILongPressGestureRecognizer) {
         switch gestureRecognizer.state {
-        case .Began:
-            peekStartLocation = gestureRecognizer.locationInView(gestureRecognizer.view)
+        case .began:
+            peekStartLocation = gestureRecognizer.location(in: gestureRecognizer.view)
             peek(at: peekStartLocation!)
-            let commitOperation = NSBlockOperation(block: { [weak self] in
+            let commitOperation = BlockOperation(block: { [weak self] in
                 self?.commit()
             })
             self.commitOperation = commitOperation
-            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(longPressDurationForCommitting * Double(NSEC_PER_SEC)))
-            dispatch_after(delayTime, dispatch_get_main_queue()) {
-                if !commitOperation.cancelled {
-                    NSOperationQueue.mainQueue().addOperation(commitOperation)
+            let delayTime = DispatchTime.now() + Double(Int64(longPressDurationForCommitting * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: delayTime) {
+                if !commitOperation.isCancelled {
+                    OperationQueue.main.addOperation(commitOperation)
                 }
             }
             
-        case .Changed:
-            let currentLocation = gestureRecognizer.locationInView(gestureRecognizer.view)
-            if let startLocation = peekStartLocation where abs(currentLocation.y - startLocation.y) > 50 {
+        case .changed:
+            let currentLocation = gestureRecognizer.location(in: gestureRecognizer.view)
+            if let startLocation = peekStartLocation , abs(currentLocation.y - startLocation.y) > 50 {
                 preventFromPopping = true
                 commitOperation?.cancel()
             }
             break
             
-        case .Ended, .Cancelled:
+        case .ended, .cancelled:
             commitOperation?.cancel()
             if !preventFromPopping {
                 // delay for UI Tests
-                let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC)))
-                dispatch_after(delayTime, dispatch_get_main_queue()) { [weak self] in
+                let delayTime = DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+                DispatchQueue.main.asyncAfter(deadline: delayTime) { [weak self] in
                     self?.pop()
                 }
             }
@@ -79,15 +79,15 @@ internal class PeekReplacementHandler: PeekHandler {
         peekViewController = PeekViewController(peekContext: peekContext)
         guard let peekViewController = peekViewController else { return }
         presentationWindow.rootViewController = peekViewController
-        presentationWindow.hidden = false
+        presentationWindow.isHidden = false
         peekViewController.peek()
     }
     
-    @objc internal func pop(completion: (Void -> Void)? = nil) {
+    @objc internal func pop(_ completion: ((Void) -> Void)? = nil) {
         preventFromPopping = false
         let window = presentationWindow
         peekViewController?.pop({ (_) in
-            window.hidden = true
+            window?.isHidden = true
             completion?()
         })
     }

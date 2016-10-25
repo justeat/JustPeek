@@ -5,20 +5,20 @@ import XCTest
 @available(iOS 9.0, *)
 class MockViewController: UIViewController, PeekingDelegate {
     
-    private(set) var didCommit = false
-    private(set) var didRegisterForPreviewing = false
+    fileprivate(set) var didCommit = false
+    fileprivate(set) var didRegisterForPreviewing = false
     let viewController = UIViewController()
     
-    override func registerForPreviewingWithDelegate(delegate: UIViewControllerPreviewingDelegate, sourceView: UIView) -> UIViewControllerPreviewing {
+    override func registerForPreviewing(with delegate: UIViewControllerPreviewingDelegate, sourceView: UIView) -> UIViewControllerPreviewing {
         didRegisterForPreviewing = true
         return StubPreviewing(delegate: delegate)
     }
     
-    func peekContext(context: PeekContext, commit viewController: UIViewController) {
+    func peekContext(_ context: PeekContext, commit viewController: UIViewController) {
         didCommit = true
     }
     
-    func peekContext(context: PeekContext, viewControllerForPeekingAt location: CGPoint) -> UIViewController? {
+    func peekContext(_ context: PeekContext, viewControllerForPeekingAt location: CGPoint) -> UIViewController? {
         return viewController
     }
     
@@ -74,7 +74,7 @@ class PeekNativeHandlerTests: XCTestCase {
         let mockViewController = MockViewController()
         let previewing = StubPreviewing(delegate: handler)
         handler.register(viewController: mockViewController, forPeekingWithDelegate: mockViewController, sourceView: mockViewController.view)
-        handler.previewingContext(previewing, commitViewController: mockViewController.viewController)
+        handler.previewingContext(previewing, commit: mockViewController.viewController)
         XCTAssertTrue(mockViewController.didCommit)
     }
     

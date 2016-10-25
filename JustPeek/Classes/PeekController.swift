@@ -21,9 +21,9 @@ private extension UIView {
     
     var hasNativeForceTouchEnabled: Bool {
         get {
-            guard !UIDevice.currentDevice().isSimulator else { return false }
+            guard !UIDevice.current.isSimulator else { return false }
             if #available(iOS 9.0, *) {
-                return traitCollection.forceTouchCapability == .Available
+                return traitCollection.forceTouchCapability == .available
             } else {
                 return false
             }
@@ -40,17 +40,17 @@ internal protocol PeekHandler {
 
 @objc(JEPeekingDelegate) public protocol PeekingDelegate {
     
-    func peekContext(context: PeekContext, viewControllerForPeekingAt location: CGPoint) -> UIViewController?
-    func peekContext(context: PeekContext, commit viewController: UIViewController)
+    func peekContext(_ context: PeekContext, viewControllerForPeekingAt location: CGPoint) -> UIViewController?
+    func peekContext(_ context: PeekContext, commit viewController: UIViewController)
 
 }
 
-@objc(JEPeekController) public class PeekController: NSObject {
+@objc(JEPeekController) open class PeekController: NSObject {
     
-    private var peekHandler: PeekHandler?
-    private var sourceViewController: UIViewController?
+    fileprivate var peekHandler: PeekHandler?
+    fileprivate var sourceViewController: UIViewController?
     
-    public func register(viewController v: UIViewController, forPeekingWithDelegate d: PeekingDelegate, sourceView: UIView) {
+    open func register(viewController v: UIViewController, forPeekingWithDelegate d: PeekingDelegate, sourceView: UIView) {
         if #available(iOS 9.0, *) {
             peekHandler = sourceView.hasNativeForceTouchEnabled ? PeekNativeHandler() : PeekReplacementHandler()
         } else {
