@@ -9,9 +9,9 @@ import UIKit
 
 internal class PeekViewController: UIViewController {
     
-    private let peekContext: PeekContext
-    private let contentView: UIView
-    private let peekView: PeekView
+    fileprivate let peekContext: PeekContext
+    fileprivate let contentView: UIView
+    fileprivate let peekView: PeekView
     
     internal init?(peekContext: PeekContext) {
         self.peekContext = peekContext
@@ -19,7 +19,7 @@ internal class PeekViewController: UIViewController {
         // NOTE: it seems UIVisualEffectView has a blur radious too high for what we want to achieve... moreover
         // it's not safe to animate it's alpha component
         peekView = PeekView(frame: peekContext.initalPreviewFrame(), contentView: contentViewController.view)
-        contentView = UIApplication.sharedApplication().keyWindow!.blurredSnaphotView //UIScreen.mainScreen().blurredSnapshotView
+        contentView = UIApplication.shared.keyWindow!.blurredSnaphotView //UIScreen.mainScreen().blurredSnapshotView
         super.init(nibName: nil, bundle: nil)
         peekView.frame = convertedInitialFrame()
     }
@@ -34,19 +34,19 @@ internal class PeekViewController: UIViewController {
         fatalError("init(coder:) must not be used")
     }
     
-    internal func peek(completion: ((Bool) -> ())? = nil) {
+    internal func peek(_ completion: ((Bool) -> ())? = nil) {
         animatePeekView(true, completion: completion)
     }
     
-    internal func pop(completion: ((Bool) -> ())?) {
+    internal func pop(_ completion: ((Bool) -> ())?) {
         animatePeekView(false, completion: completion)
     }
     
-    private func convertedInitialFrame() -> CGRect {
-        return self.view.convertRect(peekContext.initalPreviewFrame(), fromView: peekContext.sourceView)
+    fileprivate func convertedInitialFrame() -> CGRect {
+        return self.view.convert(peekContext.initalPreviewFrame(), from: peekContext.sourceView)
     }
     
-    private func animatePeekView(forBeingPresented: Bool, completion: ((Bool) -> ())?) {
+    fileprivate func animatePeekView(_ forBeingPresented: Bool, completion: ((Bool) -> ())?) {
         let destinationFrame = forBeingPresented ? peekContext.finalPreviewFrame() : convertedInitialFrame()
         contentView.alpha = forBeingPresented ? 0.0 : 1.0
         let contentViewAnimation = { [weak self] in
@@ -63,7 +63,7 @@ private extension UIScreen {
     
     var blurredSnapshotView: UIView {
         get {
-            let view = UIScreen.mainScreen().snapshotViewAfterScreenUpdates(false)
+            let view = UIScreen.main.snapshotView(afterScreenUpdates: false)
             return view.blurredSnaphotView
         }
     }
@@ -77,7 +77,7 @@ private extension UIView {
             let view = UIImageView(frame: bounds)
             if let image = snapshot {
                 let radious = CGFloat(20.0) // just because with this value the result looks good
-                view.image = image.applyBlurWithRadius(radious, tintColor: nil, saturationDeltaFactor: 1.0, maskImage: nil)
+                view.image = image.applyBlur(withRadius: radious, tintColor: nil, saturationDeltaFactor: 1.0, maskImage: nil)
             }
             return view
         }
@@ -87,10 +87,10 @@ private extension UIView {
         get {
             UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0.0)
             if let context = UIGraphicsGetCurrentContext() {
-                layer.renderInContext(context)
+                layer.render(in: context)
             }
             else {
-                drawViewHierarchyInRect(bounds, afterScreenUpdates: false)
+                drawHierarchy(in: bounds, afterScreenUpdates: false)
             }
             let image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()

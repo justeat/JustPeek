@@ -14,7 +14,7 @@ class TableViewController: UITableViewController, PeekingDelegate {
         case ShowDetails = "ShowDetailsSegueIdentifier"
     }
     
-    private var peekController: PeekController?
+    fileprivate var peekController: PeekController?
     
     // MARK: View Lifecycle
     
@@ -26,26 +26,26 @@ class TableViewController: UITableViewController, PeekingDelegate {
     
     // MARK: Segues
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueIdentifiers.ShowDetails.rawValue {
-            guard let indexPath = sender as? NSIndexPath else { return }
-            configureViewController(segue.destinationViewController, withItemAtIndexPath: indexPath)
+            guard let indexPath = sender as? IndexPath else { return }
+            configureViewController(segue.destination, withItemAtIndexPath: indexPath)
         }
     }
     
     // MARK: UITableViewDelegate
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier(SegueIdentifiers.ShowDetails.rawValue, sender: indexPath)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: SegueIdentifiers.ShowDetails.rawValue, sender: indexPath)
     }
     
     // MARK: PeekingDelegate
     
-    func peekContext(context: PeekContext, viewControllerForPeekingAt location: CGPoint) -> UIViewController? {
-        let viewController = storyboard?.instantiateViewControllerWithIdentifier("ViewController")
-        if let viewController = viewController, indexPath = tableView.indexPathForRowAtPoint(location) {
+    func peekContext(_ context: PeekContext, viewControllerForPeekingAt location: CGPoint) -> UIViewController? {
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "ViewController")
+        if let viewController = viewController, let indexPath = tableView.indexPathForRow(at: location) {
             configureViewController(viewController, withItemAtIndexPath: indexPath)
-            if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+            if let cell = tableView.cellForRow(at: indexPath) {
                 context.sourceRect = cell.frame
             }
             return viewController
@@ -53,14 +53,14 @@ class TableViewController: UITableViewController, PeekingDelegate {
         return nil
     }
     
-    func peekContext(context: PeekContext, commit viewController: UIViewController) {
-        showViewController(viewController, sender: self)
+    func peekContext(_ context: PeekContext, commit viewController: UIViewController) {
+        show(viewController, sender: self)
     }
     
     // MARK: Helpers
     
-    private func configureViewController(viewController: UIViewController, withItemAtIndexPath indexPath: NSIndexPath) {
-        guard let cell = tableView.cellForRowAtIndexPath(indexPath) else { return }
+    fileprivate func configureViewController(_ viewController: UIViewController, withItemAtIndexPath indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
         viewController.title = cell.textLabel?.text
         viewController.view.accessibilityLabel = "Preview for \(viewController.title!)"
     }
