@@ -1,5 +1,5 @@
 PODS:
-  - JustPeek (0.1.0)
+  - JustPeek (0.3.0)
 
 DEPENDENCIES:
   - JustPeek (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JustPeek: 53267bd241eaf4d39a667e3122cfd833e4ee9d80
+  JustPeek: afd0e1a184a7da37940b948b19946e2437707d23
 
 PODFILE CHECKSUM: 97b1933e54ee8297b5296836507f1d3008855e97
 

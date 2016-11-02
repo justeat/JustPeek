@@ -13,6 +13,8 @@ JustPeek is an iOS Library that adds support for Force Touch-like Peek and Pop i
 
 ## Usage
 
+**NOTE: JustPeek requires Swift 3**
+
 ```swift
 // In a UITableViewController
 
@@ -20,7 +22,7 @@ import JustPeek
 
 ...
 
-private var peekController: PeekController?
+var peekController: PeekController?
 
 // MARK: View Lifecycle
 
@@ -32,11 +34,11 @@ override func viewDidLoad() {
 
 // MARK: PeekingDelegate
 
-func peekContext(context: PeekContext, viewControllerForPeekingAt location: CGPoint) -> UIViewController? {
-    let viewController = storyboard?.instantiateViewControllerWithIdentifier("DestinationViewController")
-    if let viewController = viewController, let indexPath = tableView.indexPathForRowAtPoint(location) {
+func peekContext(_ context: PeekContext, viewControllerForPeekingAt location: CGPoint) -> UIViewController? {
+    let viewController = storyboard?.instantiateViewController(withIdentifier: "ViewController")
+    if let viewController = viewController, let indexPath = tableView.indexPathForRow(at: location) {
         configureViewController(viewController, withItemAtIndexPath: indexPath)
-        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
             context.sourceRect = cell.frame
         }
         return viewController
@@ -44,8 +46,8 @@ func peekContext(context: PeekContext, viewControllerForPeekingAt location: CGPo
     return nil
 }
 
-func peekContext(context: PeekContext, commit viewController: UIViewController) {
-    showViewController(viewController, sender: self)
+func peekContext(_ context: PeekContext, commit viewController: UIViewController) {
+    show(viewController, sender: self)
 }
 ```
 
@@ -55,24 +57,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-JustPeek is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
+JustPeek is available through [CocoaPods](http://cocoapods.org).
+To install it, simply add the following line to your Podfile:
 
 ```ruby
 pod "JustPeek"
-```
-
-If you use Swift 3 in your project, you can either point to the `swift3` branch or add the following code to your `Podfile`:
-
-```ruby
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    if target.name == "JustPeek" do
-      target.build_configurations.each do |config|
-        config.build_settings['SWIFT_VERSION'] = '2.3'
-      end
-    end
-  end
-end
 ```
 
 ## License
