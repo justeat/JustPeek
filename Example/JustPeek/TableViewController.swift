@@ -10,11 +10,11 @@ import JustPeek
 
 class TableViewController: UITableViewController, PeekingDelegate {
     
-    enum SegueIdentifiers: String {
+    private enum SegueIdentifiers: String {
         case ShowDetails = "ShowDetailsSegueIdentifier"
     }
     
-    fileprivate var peekController: PeekController?
+    public var peekController: PeekController?
     
     // MARK: View Lifecycle
     
@@ -59,7 +59,7 @@ class TableViewController: UITableViewController, PeekingDelegate {
     
     // MARK: Helpers
     
-    fileprivate func configureViewController(_ viewController: UIViewController, withItemAtIndexPath indexPath: IndexPath) {
+    private func configureViewController(_ viewController: UIViewController, withItemAtIndexPath indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
         viewController.title = cell.textLabel?.text
         viewController.view.accessibilityLabel = "Preview for \(viewController.title!)"
