@@ -16,10 +16,10 @@ internal class PeekViewController: UIViewController {
     internal init?(peekContext: PeekContext) {
         self.peekContext = peekContext
         guard let contentViewController = peekContext.destinationViewController else { return nil }
-        // NOTE: it seems UIVisualEffectView has a blur radious too high for what we want to achieve... moreover
+        // NOTE: it seems UIVisualEffectView has a blur radius too high for what we want to achieve... moreover
         // it's not safe to animate it's alpha component
         peekView = PeekView(frame: peekContext.initalPreviewFrame(), contentView: contentViewController.view)
-        contentView = UIApplication.shared.keyWindow!.blurredSnaphotView //UIScreen.mainScreen().blurredSnapshotView
+        contentView = UIApplication.shared.keyWindow!.blurredSnapshotView //UIScreen.mainScreen().blurredSnapshotView
         super.init(nibName: nil, bundle: nil)
         peekView.frame = convertedInitialFrame()
     }
@@ -64,7 +64,7 @@ private extension UIScreen {
     var blurredSnapshotView: UIView {
         get {
             let view = UIScreen.main.snapshotView(afterScreenUpdates: false)
-            return view.blurredSnaphotView
+            return view.blurredSnapshotView
         }
     }
     
@@ -72,12 +72,12 @@ private extension UIScreen {
 
 private extension UIView {
     
-    var blurredSnaphotView: UIView {
+    var blurredSnapshotView: UIView {
         get {
             let view = UIImageView(frame: bounds)
             if let image = snapshot {
-                let radious = CGFloat(20.0) // just because with this value the result looks good
-                view.image = image.applyBlur(withRadius: radious, tintColor: nil, saturationDeltaFactor: 1.0, maskImage: nil)
+                let radius = CGFloat(20.0) // just because with this value the result looks good
+                view.image = image.applyBlur(withRadius: radius, tintColor: nil, saturationDeltaFactor: 1.0, maskImage: nil)
             }
             return view
         }

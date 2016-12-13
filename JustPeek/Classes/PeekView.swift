@@ -45,7 +45,7 @@ internal class PeekView: UIView {
         UIView.animate(withDuration: animationDuration, animations: animations, completion: completion)
     }
     
-    fileprivate func cornerRadiusFor(frame: CGRect) -> CGFloat {
+    private func cornerRadiusFor(frame: CGRect) -> CGFloat {
         return min(frame.height, frame.width) * 0.05 // 5% of the smallest side
     }
     

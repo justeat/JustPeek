@@ -9,20 +9,20 @@ import UIKit
 
 internal class PeekReplacementHandler: PeekHandler {
     
-    fileprivate var peekContext: PeekContext?
-    fileprivate weak var delegate: PeekingDelegate?
+    private var peekContext: PeekContext?
+    private weak var delegate: PeekingDelegate?
     
-    fileprivate let longPressDurationForCommitting = 3.0
-    fileprivate var commitOperation: Operation?
-    fileprivate var peekStartLocation: CGPoint?
-    fileprivate var preventFromPopping = false
+    private let longPressDurationForCommitting = 3.0
+    private var commitOperation: Operation?
+    private var peekStartLocation: CGPoint?
+    private var preventFromPopping = false
     
-    fileprivate var peekViewController: PeekViewController?
-    fileprivate lazy var presentationWindow: UIWindow! = {
+    private var peekViewController: PeekViewController?
+    private lazy var presentationWindow: UIWindow! = {
         let window = UIWindow()
         window.backgroundColor = UIColor.clear
         window.windowLevel = UIWindowLevelAlert
-        window.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pop)))
+        window.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissPreview)))
         return window
     }()
     
@@ -73,7 +73,7 @@ internal class PeekReplacementHandler: PeekHandler {
         }
     }
     
-    @objc internal func peek(at location: CGPoint) {
+    @objc(peekAtLocation:) internal func peek(at location: CGPoint) {
         guard let peekContext = peekContext else { return }
         peekContext.destinationViewController = delegate?.peekContext(peekContext, viewControllerForPeekingAt: location)
         peekViewController = PeekViewController(peekContext: peekContext)
@@ -99,6 +99,11 @@ internal class PeekReplacementHandler: PeekHandler {
             guard let destinationViewController = peekContext.destinationViewController else { return }
             strongSelf.delegate?.peekContext(peekContext, commit: destinationViewController)
         }
+    }
+    
+    // This function purely exists to make objc happy when trying to call pop from the UIGestureRecognizer selector
+    @objc internal func dismissPreview() {
+        pop()
     }
     
 }
