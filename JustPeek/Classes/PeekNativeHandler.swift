@@ -12,7 +12,7 @@ fileprivate let ObservingKeyPath = "state"
 @available(iOS 9.0, *)
 internal class PeekNativeHandler: NSObject, PeekHandler, UIViewControllerPreviewingDelegate {
     
-    fileprivate var delegate: PeekingDelegate?
+    fileprivate weak var delegate: PeekingDelegate?
     fileprivate var peekContext: PeekContext?
     
     func register(viewController vc: UIViewController, forPeekingWithDelegate d: PeekingDelegate, sourceView: UIView) {

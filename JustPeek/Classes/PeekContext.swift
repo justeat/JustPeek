@@ -22,8 +22,8 @@ import UIKit
         }
     }
     
-    open let sourceViewController: UIViewController
-    open let sourceView: UIView
+    open weak var sourceViewController: UIViewController?
+    open weak var sourceView: UIView?
     
     internal(set) open var destinationViewController: UIViewController?
     open var sourceRect: CGRect
