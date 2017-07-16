@@ -34,11 +34,11 @@ internal class PeekViewController: UIViewController {
         fatalError("init(coder:) must not be used")
     }
     
-    internal func peek(_ completion: ((Bool) -> ())? = nil) {
+    internal func peek(_ completion: ((Bool) -> Void)? = nil) {
         animatePeekView(true, completion: completion)
     }
     
-    internal func pop(_ completion: ((Bool) -> ())?) {
+    internal func pop(_ completion: ((Bool) -> Void)?) {
         animatePeekView(false, completion: completion)
     }
     
@@ -46,7 +46,7 @@ internal class PeekViewController: UIViewController {
         return self.view.convert(peekContext.initalPreviewFrame(), from: peekContext.sourceView)
     }
     
-    fileprivate func animatePeekView(_ forBeingPresented: Bool, completion: ((Bool) -> ())?) {
+    fileprivate func animatePeekView(_ forBeingPresented: Bool, completion: ((Bool) -> Void)?) {
         let destinationFrame = forBeingPresented ? peekContext.finalPreviewFrame() : convertedInitialFrame()
         contentView.alpha = forBeingPresented ? 0.0 : 1.0
         let contentViewAnimation = { [weak self] in
