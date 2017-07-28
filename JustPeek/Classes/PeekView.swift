@@ -27,9 +27,9 @@ internal class PeekView: UIView {
         layer.cornerRadius = cornerRadiusFor(frame: frame)
     }
     
-    func animateToFrame(_ frame: CGRect, alongsideAnimation otherAnimation: (() -> ())? = nil, completion: ((Bool) -> ())? = nil) {
+    func animateToFrame(_ frame: CGRect, alongsideAnimation otherAnimation: (() -> Void)? = nil, completion: ((Bool) -> Void)? = nil) {
         layoutIfNeeded()
-        let animations: () -> () = { [weak self] in
+        let animations: () -> Void = { [weak self] in
             if let strongSelf = self {
                 otherAnimation?()
                 strongSelf.frame = frame
