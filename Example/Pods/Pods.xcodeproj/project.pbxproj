@@ -46,18 +46,18 @@
 		0A2FC73988C808DB251FE30CBE443DE1 /* Pods-JustPeek_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JustPeek_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		0D42C6CB2C9A25299995427FE9342614 /* Pods-JustPeek_UITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JustPeek_UITests-umbrella.h"; sourceTree = "<group>"; };
 		0E72DEC173A867A83F2F7DA794D53BF3 /* PeekNativeHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PeekNativeHandler.swift; sourceTree = "<group>"; };
-		0EB994352AE2B72F4534875C895D00D1 /* Pods_JustPeek_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JustPeek_UITests.framework; path = "Pods-JustPeek_UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EB994352AE2B72F4534875C895D00D1 /* Pods_JustPeek_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustPeek_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		133304A655E81C39FE0F289D5A89B07B /* PeekController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PeekController.swift; sourceTree = "<group>"; };
-		17FDA621736681C1B5B67B974CA94871 /* Pods-JustPeek_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-JustPeek_Example.modulemap"; sourceTree = "<group>"; };
+		17FDA621736681C1B5B67B974CA94871 /* Pods-JustPeek_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JustPeek_Example.modulemap"; sourceTree = "<group>"; };
 		21E2828C34894CF7D1C1F4EFFCB4A73B /* Pods-JustPeek_UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustPeek_UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		277B406D95F50CE769C1821AC8516734 /* Pods-JustPeek_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustPeek_Tests-resources.sh"; sourceTree = "<group>"; };
 		2F85A1D6BB82D85452F3A635BFE97883 /* Pods-JustPeek_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustPeek_Example-frameworks.sh"; sourceTree = "<group>"; };
 		30B949C7EE0952BC2E5F7B934D4BA283 /* PeekViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PeekViewController.swift; sourceTree = "<group>"; };
 		322CBA2588C6500175F98B34F93E86DB /* PeekContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PeekContext.swift; sourceTree = "<group>"; };
-		36AE07C687FF0673D3DEFB0890CFC0AF /* Pods_JustPeek_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JustPeek_Tests.framework; path = "Pods-JustPeek_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E3CA8976E704252783FA23DF303E5D7 /* Pods_JustPeek_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JustPeek_Example.framework; path = "Pods-JustPeek_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36AE07C687FF0673D3DEFB0890CFC0AF /* Pods_JustPeek_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustPeek_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E3CA8976E704252783FA23DF303E5D7 /* Pods_JustPeek_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustPeek_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		407DC660F843F2E4B82F3CE9439CCE86 /* Pods-JustPeek_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustPeek_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		55489D366F4C5606F66F4606233DE5B2 /* JustPeek.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = JustPeek.modulemap; sourceTree = "<group>"; };
+		55489D366F4C5606F66F4606233DE5B2 /* JustPeek.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JustPeek.modulemap; sourceTree = "<group>"; };
 		616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		67318B0A8F5E197FD237C7C014646A07 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		6EB69E5772679DD85AFB01A1650CF4FE /* Pods-JustPeek_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JustPeek_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -70,18 +70,18 @@
 		8499CD3CDB052FC5311DF64DB067A77D /* PeekView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PeekView.swift; sourceTree = "<group>"; };
 		84FBD2F7846BFC74B5DB66705B8701D0 /* Pods-JustPeek_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustPeek_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		937CB302B8109CAAE7EB9DE9AD6EFDE0 /* JustPeek-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JustPeek-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9939AF73A24FCC20444BB9AA82FAA6D4 /* Pods-JustPeek_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JustPeek_Tests-umbrella.h"; sourceTree = "<group>"; };
 		9BE7A7904C5A6F49D8C5188DC7238F1B /* Pods-JustPeek_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JustPeek_Example-umbrella.h"; sourceTree = "<group>"; };
 		A1CF4EC3ABF86B26B71C3A30A58DDBD2 /* Pods-JustPeek_UITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustPeek_UITests-resources.sh"; sourceTree = "<group>"; };
 		AC8EFCD69657F221C66CC6859F3C029B /* Pods-JustPeek_UITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JustPeek_UITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		AE13CB1DCD20060D0490B05A1CDA18D9 /* Pods-JustPeek_UITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-JustPeek_UITests.modulemap"; sourceTree = "<group>"; };
+		AE13CB1DCD20060D0490B05A1CDA18D9 /* Pods-JustPeek_UITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JustPeek_UITests.modulemap"; sourceTree = "<group>"; };
 		B7159FE7BB0BDC858F3B804DA35DB82C /* JustPeek-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JustPeek-prefix.pch"; sourceTree = "<group>"; };
 		BB9461DE8D8AA5C160CA1A60FEA3D785 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE9627F975C86E01C5BA6C4BCE34C97A /* Pods-JustPeek_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-JustPeek_Tests.modulemap"; sourceTree = "<group>"; };
+		BE9627F975C86E01C5BA6C4BCE34C97A /* Pods-JustPeek_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JustPeek_Tests.modulemap"; sourceTree = "<group>"; };
 		C63882FC981C41CB91CC2734E554B747 /* Pods-JustPeek_UITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JustPeek_UITests-dummy.m"; sourceTree = "<group>"; };
 		C6931D8D4B8F8152C88C25E1D7E03340 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		CA0B5881364A11C0CCD056DFCC6CA36E /* JustPeek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JustPeek.framework; path = JustPeek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA0B5881364A11C0CCD056DFCC6CA36E /* JustPeek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JustPeek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8D4ACB068E75F0017782295FA40D5B /* Pods-JustPeek_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustPeek_Example-resources.sh"; sourceTree = "<group>"; };
 		CC796B5BFD57FDBA9CC06015AC45C9BF /* Pods-JustPeek_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JustPeek_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D3B66BFDFF3F2F4F575DC9A0687516C8 /* Pods-JustPeek_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JustPeek_Example-dummy.m"; sourceTree = "<group>"; };
@@ -143,7 +143,6 @@
 				C6931D8D4B8F8152C88C25E1D7E03340 /* UIImage+ImageEffects.h */,
 				67318B0A8F5E197FD237C7C014646A07 /* UIImage+ImageEffects.m */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -217,7 +216,6 @@
 			children = (
 				17E1D1EC7550AE40CFCEDC86FDE55787 /* Classes */,
 			);
-			name = JustPeek;
 			path = JustPeek;
 			sourceTree = "<group>";
 		};
@@ -406,7 +404,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0900;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -519,6 +517,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 84FBD2F7846BFC74B5DB66705B8701D0 /* Pods-JustPeek_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -625,6 +624,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F83C91B4026FCCD0E9749196B1C7AAAA /* Pods-JustPeek_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -665,19 +665,29 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -691,6 +701,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -705,20 +716,30 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
