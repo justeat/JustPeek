@@ -83,7 +83,7 @@ internal class PeekReplacementHandler: PeekHandler {
         peekViewController.peek()
     }
     
-    @objc internal func pop(_ completion: ((Void) -> Void)? = nil) {
+    @objc internal func pop(_ completion: (() -> Void)? = nil) {
         preventFromPopping = false
         let window = presentationWindow
         peekViewController?.pop({ (_) in
