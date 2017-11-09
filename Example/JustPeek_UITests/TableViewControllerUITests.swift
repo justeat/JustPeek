@@ -18,7 +18,7 @@ class TableViewControllerUITests: XCTestCase {
         super.setUp()
         continueAfterFailure = false
         XCUIApplication().launch()
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
     }
     
     override func tearDown() {
