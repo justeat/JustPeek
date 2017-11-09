@@ -50,8 +50,10 @@ internal protocol PeekHandler {
     fileprivate var peekHandler: PeekHandler?
     fileprivate var sourceViewController: UIViewController?
     
+    public var nativeForceTouchDisabled = false
+    
     open func register(viewController v: UIViewController, forPeekingWithDelegate d: PeekingDelegate, sourceView: UIView) {
-        if #available(iOS 9.0, *) {
+        if #available(iOS 9.0, *), nativeForceTouchDisabled == false {
             peekHandler = sourceView.hasNativeForceTouchEnabled ? PeekNativeHandler() : PeekReplacementHandler()
         } else {
             peekHandler = PeekReplacementHandler()

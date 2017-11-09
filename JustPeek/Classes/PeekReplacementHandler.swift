@@ -86,9 +86,10 @@ internal class PeekReplacementHandler: PeekHandler {
     @objc internal func pop(_ completion: ((Void) -> Void)? = nil) {
         preventFromPopping = false
         let window = presentationWindow
-        peekViewController?.pop({ (_) in
+        peekViewController?.pop({ [weak self](_) in
             window?.isHidden = true
             completion?()
+            self?.peekContext?.destinationViewController = nil
         })
     }
     
