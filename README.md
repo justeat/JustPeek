@@ -6,6 +6,8 @@
 [![License](https://img.shields.io/cocoapods/l/JustPeek.svg?style=flat)](http://cocoapods.org/pods/JustPeek)
 [![Platform](https://img.shields.io/cocoapods/p/JustPeek.svg?style=flat)](http://cocoapods.org/pods/JustPeek)
 
+###Warning: <span style="color:red">This library isn't supported anymore by Just Eat and therefore must be considered obsolete.</span>
+
 JustPeek is an iOS Library that adds support for Force Touch-like Peek and Pop interactions on devices that do not natively support this kind of interaction. Under the hood it uses the native implementation if available, otherwise a custom implementation based on `UILongPressGestureRecognizer`.
 
 <p align="center"><img src="https://github.com/justeat/JustPeek/blob/master/just_peek_demo.gif?raw=true" alt="JustPeek Demo"  width="320px" height="568px" /></p>
