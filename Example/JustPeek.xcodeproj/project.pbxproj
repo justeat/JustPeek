@@ -66,6 +66,7 @@
 		88956AF3E52AEB7849DC5A1E /* Pods_JustPeek_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustPeek_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B80FBBA147F1B53DF1E5E951 /* Pods_JustPeek_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustPeek_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD314119D10D0CCD6044E2DF /* JustPeek.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JustPeek.podspec; path = ../JustPeek.podspec; sourceTree = "<group>"; };
+		C8051BEA1FB4BF1A00A9C977 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D2DFDE425EC823CFB56F8914 /* Pods-JustPeek_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustPeek_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustPeek_Tests/Pods-JustPeek_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D90A26288CFB4613B3F454C8 /* Pods-JustPeek_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustPeek_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustPeek_Example/Pods-JustPeek_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E28C1E55A665EFA7720B4041 /* Pods-JustPeek_UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustPeek_UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustPeek_UITests/Pods-JustPeek_UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				C8051BEA1FB4BF1A00A9C977 /* README.md */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for JustPeek */,
 				607FACE81AFB9204008FA782 /* Tests */,
