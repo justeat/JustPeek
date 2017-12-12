@@ -14,8 +14,10 @@ JustPeek is an iOS Library that adds support for Force Touch-like Peek and Pop i
 
 ## Usage
 
-**Swift 3.2 = Version 0.3.1*
+**Swift 3.2 = Version 0.3.1**
+
 **Swift 4 = Version 1.0.0**
+
 
 ```swift
 // In a UITableViewController
