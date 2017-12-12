@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JustPeek'
-  s.version          = '0.3.1'
+  s.version          = '1.0.0'
   s.summary          = 'iOS Library that adds support for Force Touch-like Peek and Pop interactions on older devices'
 
   # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ Under the hood it uses the native implementation if available, otherwise a custo
   s.source           = { :git => 'https://github.com/justeat/JustPeek.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/justeat_tech'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '8.3'
 
   s.source_files = 'JustPeek/Classes/**/*'
   s.frameworks = 'UIKit'

@@ -45,7 +45,7 @@ internal protocol PeekHandler {
 
 }
 
-@objc(JEPeekController) open class PeekController: NSObject {
+@objc(JEPeekController) @objcMembers open class PeekController: NSObject {
     
     fileprivate var peekHandler: PeekHandler?
     fileprivate var sourceViewController: UIViewController?

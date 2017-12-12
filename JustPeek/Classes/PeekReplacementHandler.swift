@@ -7,7 +7,7 @@
 
 import UIKit
 
-internal class PeekReplacementHandler: PeekHandler {
+@objcMembers internal class PeekReplacementHandler: PeekHandler {
     
     private var peekContext: PeekContext?
     private weak var delegate: PeekingDelegate?
@@ -34,7 +34,7 @@ internal class PeekReplacementHandler: PeekHandler {
         sourceView.addGestureRecognizer(longPressGestureRecognizer)
     }
     
-    @objc internal func handleLongPress(fromRecognizer gestureRecognizer: UILongPressGestureRecognizer) {
+    internal func handleLongPress(fromRecognizer gestureRecognizer: UILongPressGestureRecognizer) {
         switch gestureRecognizer.state {
         case .began:
             peekStartLocation = gestureRecognizer.location(in: gestureRecognizer.view)
@@ -83,7 +83,7 @@ internal class PeekReplacementHandler: PeekHandler {
         peekViewController.peek()
     }
     
-    @objc internal func pop(_ completion: ((Void) -> Void)? = nil) {
+    internal func pop(_ completion: (() -> Void)? = nil) {
         preventFromPopping = false
         let window = presentationWindow
         peekViewController?.pop({ (_) in
@@ -92,7 +92,7 @@ internal class PeekReplacementHandler: PeekHandler {
         })
     }
     
-    @objc internal func commit() {
+    internal func commit() {
         preventFromPopping = false
         pop { [weak self] in
             guard let strongSelf = self, let peekContext = strongSelf.peekContext else { return }
@@ -102,8 +102,7 @@ internal class PeekReplacementHandler: PeekHandler {
     }
     
     // This function purely exists to make objc happy when trying to call pop from the UIGestureRecognizer selector
-    @objc internal func dismissPreview() {
+    internal func dismissPreview() {
         pop()
     }
-    
 }

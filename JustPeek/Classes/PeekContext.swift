@@ -7,7 +7,7 @@
 
 import UIKit
 
-@objc(JEPeekContext) open class PeekContext: NSObject {
+@objc(JEPeekContext) @objcMembers open class PeekContext: NSObject {
     
     internal struct AnimationConfiguration {
         static let peekAnimationInsetMultiplier = CGFloat(0.05) // 5%
