@@ -67,7 +67,6 @@ private extension UIScreen {
             return view.blurredSnapshotView
         }
     }
-    
 }
 
 private extension UIView {

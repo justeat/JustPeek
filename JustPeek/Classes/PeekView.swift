@@ -7,7 +7,7 @@
 
 import UIKit
 
-internal class PeekView: UIView {
+@objcMembers internal class PeekView: UIView {
     
     init(frame: CGRect, contentView: UIView) {
         super.init(frame: frame)
